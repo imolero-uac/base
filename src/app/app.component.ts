@@ -1,5 +1,7 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Validators } from '@angular/forms';
+//import { Curso, DetalleMatricula } from './interfaces';
+
 
 @Component({
   selector: 'app-root',
@@ -185,4 +187,126 @@ console.log('Bienvenidos a Typescript');
 // console.log('Pasatiempo 03: ', p03);
 //#endregion
 
+//#region desestructuracion de parametros
+// interface DetalleMatricula {
+//   nombreCurso: string,
+//   creditos: number
+// }
+
+// const mat_mate: DetalleMatricula = {
+//   nombreCurso: 'Matematica I',
+//   creditos: 3
+// }
+
+// const mat_ads: DetalleMatricula = {
+//   nombreCurso: 'Análisis y Diseño de Sistemas', 
+//   creditos: 4
+// }
+
+// function totalCreditos(detalles: DetalleMatricula[]): number[]{
+//   let totalCreditos = 0;
+//   let totalCursos = 0;
+//   // detalles.forEach((detalleMatricula) => {
+//   //   totalCreditos += detalleMatricula.creditos;
+//   // });
+
+//   detalles.forEach(({creditos}) => {
+//     totalCreditos += creditos;
+//     totalCursos ++;
+//   });
+//   return [totalCreditos, totalCursos];
+// }
+
+// const detMat: DetalleMatricula[] = [mat_mate, mat_ads];
+
+// const [creditosMatriculados, cursosMatriculados] = totalCreditos(detMat);
+
+// console.log('Total de creditos matriculados: ', creditosMatriculados);
+// console.log('Total cursos matriculados: ', cursosMatriculados);
+//#endregion
+
+//#region import export
+
+// const mat_mate: DetalleMatricula = {
+//   nombreCurso: 'Matematica I',
+//   creditos: 3
+// }
+
+// const mat_ads: DetalleMatricula = {
+//   nombreCurso: 'Análisis y Diseño de Sistemas', 
+//   creditos: 4
+// }
+
+// function totalCreditos(detalles: DetalleMatricula[]): number[]{
+//   let totalCreditos = 0;
+//   let totalCursos = 0;
+//   // detalles.forEach((detalleMatricula) => {
+//   //   totalCreditos += detalleMatricula.creditos;
+//   // });
+
+//   detalles.forEach(({creditos}) => {
+//     totalCreditos += creditos;
+//     totalCursos ++;
+//   });
+//   return [totalCreditos, totalCursos];
+// }
+
+// const detMat: DetalleMatricula[] = [mat_mate, mat_ads];
+
+// const [creditosMatriculados, cursosMatriculados] = totalCreditos(detMat);
+
+// console.log('Total de creditos matriculados: ', creditosMatriculados);
+// console.log('Total cursos matriculados: ', cursosMatriculados);
+
+// const curso: Curso = {
+//   docente: 'Juan Perez', 
+//   nombre: 'Matemática I', 
+//   creditos: 3
+// }
+
+//#endregion
+
+
+class Alumno {
+  // private nombre: string;
+  // private dni: string;
+  static carreraProfesional: string;
+
+  // constructor(nombre: string, dni: string){
+  //   this.nombre = nombre;
+  //   this.dni = dni;
+  // }
+  
+  constructor(
+    private nombre: string, 
+    private dni: string
+    ){}
+
+  public mostrarAlumno(){
+    console.log('Carrera Profesional: ', Alumno.carreraProfesional);
+    console.log('Nombre: ', this.nombre);
+    console.log('DNI: ', this.dni);
+    // console.log(alumno);
+    // console.table(alumno);
+  }
+
+}
+
+
+Alumno.carreraProfesional = 'IS';
+const e01cp01: Alumno = new Alumno('Juan Perez', '88888888');
+
+// function mostrarAlumno(alumno: Alumno){
+//   const {nombre, dni} = alumno;
+//   console.log('Carrera Profesional: ', Alumno.carreraProfesional);
+//   console.log('Nombre: ', nombre);
+//   console.log('DNI: ', dni);
+//   // console.log(alumno);
+//   // console.table(alumno);
+// }
+
+// mostrarAlumno(e01cp01);
+console.log('--------------------------')
+console.log(e01cp01);
+e01cp01.mostrarAlumno();
 
