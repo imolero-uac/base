@@ -266,47 +266,177 @@ console.log('Bienvenidos a Typescript');
 
 //#endregion
 
+//#region clases
+// class Alumno {
+//   // private nombre: string;
+//   // private dni: string;
+//   static carreraProfesional: string;
 
-class Alumno {
-  // private nombre: string;
-  // private dni: string;
-  static carreraProfesional: string;
-
-  // constructor(nombre: string, dni: string){
-  //   this.nombre = nombre;
-  //   this.dni = dni;
-  // }
+//   // constructor(nombre: string, dni: string){
+//   //   this.nombre = nombre;
+//   //   this.dni = dni;
+//   // }
   
-  constructor(
-    private nombre: string, 
-    private dni: string
-    ){}
+//   constructor(
+//     private nombre: string, 
+//     private dni?: string
+//     ){}
 
-  public mostrarAlumno(){
-    console.log('Carrera Profesional: ', Alumno.carreraProfesional);
-    console.log('Nombre: ', this.nombre);
-    console.log('DNI: ', this.dni);
-    // console.log(alumno);
-    // console.table(alumno);
-  }
+//   public mostrarAlumno(){
+//     console.log('Carrera Profesional: ', Alumno.carreraProfesional);
+//     console.log('Nombre: ', this.nombre);
+//     console.log('DNI: ', this.dni);
+//     // console.log(alumno);
+//     // console.table(alumno);
+//   }
 
-}
-
-
-Alumno.carreraProfesional = 'IS';
-const e01cp01: Alumno = new Alumno('Juan Perez', '88888888');
-
-// function mostrarAlumno(alumno: Alumno){
-//   const {nombre, dni} = alumno;
-//   console.log('Carrera Profesional: ', Alumno.carreraProfesional);
-//   console.log('Nombre: ', nombre);
-//   console.log('DNI: ', dni);
-//   // console.log(alumno);
-//   // console.table(alumno);
 // }
 
-// mostrarAlumno(e01cp01);
-console.log('--------------------------')
-console.log(e01cp01);
-e01cp01.mostrarAlumno();
 
+// Alumno.carreraProfesional = 'IS';
+// const e01cp01: Alumno = new Alumno('Juan Perez');
+
+// // function mostrarAlumno(alumno: Alumno){
+// //   const {nombre, dni} = alumno;
+// //   console.log('Carrera Profesional: ', Alumno.carreraProfesional);
+// //   console.log('Nombre: ', nombre);
+// //   console.log('DNI: ', dni);
+// //   // console.log(alumno);
+// //   // console.table(alumno);
+// // }
+
+// // mostrarAlumno(e01cp01);
+// console.log('--------------------------')
+// console.log(e01cp01);
+// e01cp01.mostrarAlumno();
+//#endregion
+
+//#region uso de static y this
+// class Cafetera {
+//   static serie: number = 0;
+
+//   constructor(
+//     private color: string,
+//     private nroSerie?: number
+//   ){
+//     Cafetera.serie += 1;
+//     this.nroSerie = Cafetera.serie;
+//   }
+
+//   getColor(): string {
+//     return this.color;
+//   }
+
+//   getNroSerie(): number | undefined {
+//     return this.nroSerie;
+//   }
+
+//   mostrar(){
+//     mostrarCafetera(this);
+//   }
+
+// }
+
+// const mostrarCafetera = (cafetera: Cafetera) => {
+//   console.log('---------------------');
+//   console.log('Serie: ', cafetera.getNroSerie());
+//   console.log('Color: ', cafetera.getColor());
+//   console.log('---------------------');
+// };
+
+// const cafeteras: Cafetera[] = [new Cafetera('rojo'), new Cafetera('azul')];
+// cafeteras.push(new Cafetera('verde'));
+// cafeteras.push(new Cafetera('morado'));
+
+// cafeteras.forEach((cafetera) => {cafetera.mostrar()});
+// console.log('estado de la variable estatica: ', Cafetera.serie);
+//#endregion
+
+//#region herencia y polimorfismo
+// class Persona {
+//   constructor(
+//     protected nombre: string,
+//     protected dni: string
+//   ){};
+
+//   getNombre(): string {
+//     return this.nombre;
+//   }
+
+//   getDni(): string {
+//     return this.dni;
+//   }
+// }
+
+// class Alumno extends Persona {
+//   constructor(
+//     nombre: string,
+//     dni: string,
+//     private codigo: string,
+//   ){
+//     super(nombre, dni);
+//   };
+
+//   mostrar(){
+//     console.log('-------------------------');
+//     console.log('Nombre: ', this.nombre);
+//     console.log('DNI: ', this.dni);
+//     console.log('Codigo: ', this.codigo);
+//     console.log('-------------------------');
+//   };
+// }
+
+// class Docente extends Persona {
+//   constructor(
+//     nombre: string,
+//     dni: string,
+//     private codigoDocente: string,
+//   ){
+//     super(nombre, dni);
+//   };
+
+//   mostrar(){
+//     console.log('-------------------------');
+//     console.log('Nombre: ', this.nombre);
+//     console.log('DNI: ', this.dni);
+//     console.log('Codigo Docente: ', this.codigoDocente);
+//     console.log('-------------------------');
+//   };
+// }
+
+// const mostrarPersona = (persona: Persona) => {
+//   console.log('-------------------------');
+//   console.log('Nombre: ', persona.getNombre());
+//   console.log('DNI: ', persona.getDni());
+//   console.log('-------------------------');
+// };
+
+// const alumnos: Alumno[] = [
+//   new Alumno('Juan Perez', '00000000', '2021001a'),
+//   new Alumno('Juana Garcia', '00000001', '2021002b'),
+//   new Alumno('Juan Alvarado', '00000002', '2021003c'),
+//   new Alumno('Moises Escalante', '00000003', '2021004d'),
+// ];
+
+// const docentes: Docente[] = [
+//   new Docente('Docente Juan Perez', '00000000', '2021001a'),
+//   new Docente('Docente Juana Garcia', '00000001', '2021002b'),
+//   new Docente('Docente Juan Alvarado', '00000002', '2021003c'),
+//   new Docente('Docente Moises Escalante', '00000003', '2021004d'),
+// ];
+
+
+// alumnos.forEach((alumno) => alumno.mostrar());
+
+// alumnos.forEach((alumno) => mostrarPersona(alumno));
+// docentes.forEach((docente) => mostrarPersona(docente));
+//#endregion
+
+
+function queSoy<T>(valor: T) {
+  return valor;
+}
+
+let soyString = queSoy('Hola desde typescript');
+let soyNumero = queSoy(5);
+let soyArreglo = queSoy([1,2,3,4,5]);
