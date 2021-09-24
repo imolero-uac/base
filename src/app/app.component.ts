@@ -432,11 +432,64 @@ console.log('Bienvenidos a Typescript');
 // docentes.forEach((docente) => mostrarPersona(docente));
 //#endregion
 
+//#region generics
+// function queSoy<T>(valor: T) {
+//   return valor;
+// }
 
-function queSoy<T>(valor: T) {
-  return valor;
-}
+// let soyString = queSoy('Hola desde typescript');
+// let soyNumero = queSoy(5);
+// let soyArreglo = queSoy([1,2,3,4,5]);
+//#endregion
 
-let soyString = queSoy('Hola desde typescript');
-let soyNumero = queSoy(5);
-let soyArreglo = queSoy([1,2,3,4,5]);
+//#region decoradores
+// function classDecorator<T extends {new (...args: any[]): {}}>(
+//   constructor: T
+// ) {
+//   return class extends constructor {
+//     nuevaPropiedad = "nuevo atributo";
+//     hola = 'hola';
+//   }
+// }
+
+
+// @classDecorator
+// class Clase{
+//   public atributo: string = '123456';
+
+//   mostrar() {
+//     console.log('hola desde Clase');
+//   }
+// }
+
+// console.log(Clase);
+
+// const clase = new Clase();
+
+// console.log(clase);
+//#endregion
+
+//#region encadenamiento opcional
+// interface Padre {
+//   nombre: string,
+//   hijos?: string[]
+// }
+
+// const padre01 = {
+//   nombre: 'Pedro'
+// }
+
+// const padre02 = {
+//   nombre: 'Alfredo', 
+//   hijos: ['Ana', 'Lucia']
+// }
+
+// function mostrarHijos(padre: Padre): void {
+//   const cantidadHijos = padre.hijos?.length;
+
+//   console.log(cantidadHijos);
+// }
+
+// mostrarHijos(padre01);
+// mostrarHijos(padre02);
+//#endregion
