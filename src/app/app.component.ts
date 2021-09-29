@@ -12,7 +12,9 @@ export class AppComponent {
   title = 'base';
 }
 
-console.log('Bienvenidos a Typescript');
+// console.log(AppComponent);
+
+// console.log('Bienvenidos a Typescript');
 
 
 //#region variables
@@ -465,6 +467,7 @@ console.log('Bienvenidos a Typescript');
 // console.log(Clase);
 
 // const clase = new Clase();
+// clase.mostrar();
 
 // console.log(clase);
 //#endregion
