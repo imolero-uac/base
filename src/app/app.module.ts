@@ -2,18 +2,18 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { ClienteComponent } from './clientes/cliente/cliente.component';
-import { ListaclientesComponent } from './clientes/listaclientes/listaclientes.component';
+import { ClientesModule } from './clientes/clientes.module';
+import { ProveedoresModule } from './proveedores/proveedores.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ClienteComponent,
-    ListaclientesComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ClientesModule,
+    ProveedoresModule
   ],
   providers: [],
   bootstrap: [AppComponent]

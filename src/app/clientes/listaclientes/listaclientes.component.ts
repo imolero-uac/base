@@ -15,7 +15,7 @@ export class ListaclientesComponent implements OnInit {
     "Augusto Valencia", 
     "Ruth Calle"
   ];
-  clienteEliminado: string = "sin eliminar";
+  clienteEliminado: string = "";
 
   constructor() { 
   }
@@ -24,7 +24,7 @@ export class ListaclientesComponent implements OnInit {
   }
 
   eliminarElemento(): void {
-    this.clienteEliminado = this.clientes.shift() || "sin valor";
+    this.clienteEliminado = this.clientes.shift() || "";
 
   }
 

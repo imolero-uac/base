@@ -1,0 +1,29 @@
+<h3>Proveedores</h3>
+
+<div class="row">
+    <div class="col">
+        <h4>Empresas</h4>
+        <hr>
+        <ul>
+            <li>Gloria - 15</li>
+            <li>Alicorp - 50</li>
+            <li>Nestlé - 12</li>
+        </ul>
+    </div>
+    <div class="col">
+        <h4>Agregar</h4>
+        <hr>
+        <form (submit)="agregar()">
+            <div class="mb-3">
+                <label for="empresa" class="form-label">Empresa</label>
+                <input type="text" class="form-control" placeholder="Ingrese Empresa" id="empresa"/>
+            </div>
+            <div class="mb-3">
+                <label for="productos" class="form-label">Productos</label>
+                <input type="number" class="form-control" placeholder="Cantidad de productos" id="productos"/>
+            </div>
+            <button type="submit" class="btn btn-primary">Agregar</button> 
+        </form>
+    </div>
+
+</div>

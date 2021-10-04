@@ -6,7 +6,11 @@
 
 <button type="button" class="btn btn-primary" (click)="eliminarElemento()">Eliminar</button>
 
-<div *ngIf="clienteEliminado !== 'sin valor'">
+<div *ngIf="clienteEliminado; else sinEliminar">
     <h3>CLIENTE ELIMINADO</h3>
     <p>{{ clienteEliminado }}</p>
 </div>
+<ng-template #sinEliminar>
+    <h3>NO SE HAN ELIMINADO CLIENTES</h3>
+</ng-template>
+<app-cliente></app-cliente>
