@@ -1,0 +1,68 @@
+<h4>Agregar</h4>
+<hr>
+<form (ngSubmit)="agregar()">
+    <div class="mb-3">
+        <label for="empresa" class="form-label">Empresa</label>
+        <input 
+            type="text" 
+            class="form-control" 
+            placeholder="Ingrese Empresa" 
+            id="empresa"
+            name="proveedor.nombre"
+            [(ngModel)]="nuevoProveedor.nombre"
+        />
+       <!-- [value]="nuevoProveedor.nombre"
+            (input)="controlInput( $event )" -->
+    </div>
+    <div class="mb-3">
+        <label for="productos" class="form-label">Productos</label>
+        <input 
+            type="number" 
+            class="form-control" 
+            placeholder="Cantidad de productos" 
+            id="productos"
+            name="proveedor.productos"
+            [(ngModel)]="nuevoProveedor.productos"
+        />
+    </div>
+    <div class="form-check">
+        <input 
+            class="form-check-input" 
+            type="radio" 
+            name="grupo01" 
+            id="flexRadioDefault1"
+            value="Principal"
+            [(ngModel)]="nuevoProveedor.tipo"
+        >
+        <label class="form-check-label" for="flexRadioDefault1">
+          Principal
+        </label>
+    </div>
+    <div class="form-check">
+        <input 
+            class="form-check-input" 
+            type="radio" 
+            name="grupo01" 
+            id="flexRadioDefault2"
+            value="Secundario"
+            [(ngModel)]="nuevoProveedor.tipo"
+        >
+        <label class="form-check-label" for="flexRadioDefault2">
+          Secundario
+        </label>
+    </div>
+    <div class="form-check">
+        <input 
+            class="form-check-input" 
+            type="radio" 
+            name="grupo01" 
+            id="flexRadioDefault3"
+            value="Eventual"
+            [(ngModel)]="nuevoProveedor.tipo"
+        >
+        <label class="form-check-label" for="flexRadioDefault3">
+          Eventual
+        </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Agregar</button> 
+</form>

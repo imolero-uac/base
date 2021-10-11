@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Empresa } from '../interfaces/empresa.interface';
 
 @Component({
   selector: 'app-proveedoresmain',
@@ -12,8 +13,27 @@ export class ProveedoresmainComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  agregar():void {
-    console.log("desde agregar");
+  proveedores: Empresa[] = [
+    {
+      nombre: 'Gloria',
+      productos: 15,
+      tipo: 'Principal'
+    },
+    {
+      nombre: 'Alicorp',
+      productos: 25,
+      tipo: 'Principal'
+    }
+  ]
+
+    agregarNuevoProveedor(nuevo: Empresa):void {
+    this.proveedores.push(nuevo);
   }
+
+  // controlInput(evento: any): void{
+  //   console.log(evento);
+  //   this.nuevoProveedor.nombre = evento.target.value;
+  //   console.log(this.nuevoProveedor);
+  // }
 
 }

@@ -1,0 +1,5 @@
+<h4>Empresas</h4>
+<hr>
+<ul>
+    <li *ngFor="let proveedor of proveedores">{{ proveedor.nombre}} - {{ proveedor.productos | number }} - {{ proveedor.tipo }}</li>
+</ul>
