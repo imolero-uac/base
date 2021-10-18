@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Empresa } from '../interfaces/empresa.interface';
+import { ProveedoresService } from '../services/proveedores.service';
 
 @Component({
   selector: 'app-ingresoproveedor',
@@ -8,7 +9,9 @@ import { Empresa } from '../interfaces/empresa.interface';
 })
 export class IngresoproveedorComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private proveedoresService: ProveedoresService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -19,15 +22,16 @@ export class IngresoproveedorComponent implements OnInit {
     tipo: ''
   }
 
-  @Output() 
-  onNuevoProveedor: EventEmitter<Empresa> = new EventEmitter();
+  // @Output() 
+  // onNuevoProveedor: EventEmitter<Empresa> = new EventEmitter();
 
   agregar(): void {
     if (this.nuevoProveedor.nombre.trim().length == 0) {
       console.log('no paso validacion');
       return;
     }
-    this.onNuevoProveedor.emit(this.nuevoProveedor);
+    // this.onNuevoProveedor.emit(this.nuevoProveedor);
+    this.proveedoresService.agregar(this.nuevoProveedor);
     // console.log(this.nuevoProveedor);
     this.nuevoProveedor = {
       nombre: '',

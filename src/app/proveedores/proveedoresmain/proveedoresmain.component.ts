@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Empresa } from '../interfaces/empresa.interface';
+import { ProveedoresService } from '../services/proveedores.service';
 
 @Component({
   selector: 'app-proveedoresmain',
@@ -8,27 +9,14 @@ import { Empresa } from '../interfaces/empresa.interface';
 })
 export class ProveedoresmainComponent implements OnInit {
 
-  constructor() { }
+  constructor( ) { }
 
   ngOnInit(): void {
   }
 
-  proveedores: Empresa[] = [
-    {
-      nombre: 'Gloria',
-      productos: 15,
-      tipo: 'Principal'
-    },
-    {
-      nombre: 'Alicorp',
-      productos: 25,
-      tipo: 'Principal'
-    }
-  ]
-
-    agregarNuevoProveedor(nuevo: Empresa):void {
-    this.proveedores.push(nuevo);
-  }
+  // agregarNuevoProveedor(nuevo: Empresa):void {
+  //   this.proveedoresService.agregar(nuevo);
+  // }
 
   // controlInput(evento: any): void{
   //   console.log(evento);

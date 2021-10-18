@@ -6,8 +6,7 @@ import { ProveedorComponent } from './proveedor/proveedor.component';
 import { ProveedoresmainComponent } from './proveedoresmain/proveedoresmain.component';
 import { ListaproveedoresComponent } from './listaproveedores/listaproveedores.component';
 import { IngresoproveedorComponent } from './ingresoproveedor/ingresoproveedor.component';
-
-
+import { ProveedoresService } from './services/proveedores.service';
 
 @NgModule({
   declarations: [
@@ -22,6 +21,9 @@ import { IngresoproveedorComponent } from './ingresoproveedor/ingresoproveedor.c
   imports: [
     CommonModule,
     FormsModule
+  ],
+  providers: [
+    ProveedoresService
   ]
 })
 export class ProveedoresModule { }

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Empresa } from '../interfaces/empresa.interface';
+import { ProveedoresService } from '../services/proveedores.service';
 
 @Component({
   selector: 'app-listaproveedores',
@@ -8,11 +9,14 @@ import { Empresa } from '../interfaces/empresa.interface';
 })
 export class ListaproveedoresComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private proveedoresService: ProveedoresService
+  ) {
+  }
 
   ngOnInit(): void {
   }
 
-  @Input()
-  proveedores: Empresa[] = []
+  proveedores: Empresa[] = this.proveedoresService.proveedores;
+  
 }
